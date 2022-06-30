@@ -1,0 +1,34 @@
+          InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HindiDobbedDetails(
+                                _hindiDobbedList[index].link),
+                          ),
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          CachedNetworkImage(
+                            imageUrl: _hindiDobbedList[index].image,
+                            height: 260,
+                            width: double.infinity,
+                            fit: BoxFit.fill,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              _hindiDobbedList[index].title,
+                              style: const TextStyle(
+                                fontSize: 18,
+                                color: Colors.grey,
+                              ),
+                              maxLines: 3,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+            
